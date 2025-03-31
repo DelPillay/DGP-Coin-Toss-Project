@@ -7,9 +7,19 @@ def coin_toss():
 def normalize_input(user_input):
   user_input = user_input.lower().strip()
   
-  heads_variations = {"Heads", "heads", "HEADS", "HeadS", "hEADS", "HEaDS", "head", "Head", "HEAD", "hEad", "HeAd",  "hed", "Hed", "HED", "heds", "Heds", "HEDS", "headds", "Headds", "HEADDS", "hads", "Hads", "HADS", "haeds", "Haeds", "HAEDS", "hedas", "Hedas", "HEDAS", "hedz", "Hedz", "HEDZ",  "heafs", "Heafs", "HEAFS", "hesds", "Hesds", "HESDS",  "heqds", "Heqds", "HEQDS",  "headw", "Headw", "HEADW",  "hezds", "Hezds", "HEZDS",  "heaps", "Heaps", "HEAPS",  "hears", "Hears", "HEARS", "hands", "Hands", "HANDS", "Heags", "heags","H", "h"}
+  heads_variations = {"Heads", "heads", "HEADS", "HeadS", "hEADS", "HEaDS", "head", "Head", "HEAD", "hEad", "HeAd",
+                      "hed", "Hed", "HED", "heds", "Heds", "HEDS", "headds", "Headds", "HEADDS", "hads", "Hads", "HADS",
+                      "haeds", "Haeds", "HAEDS", "hedas", "Hedas", "HEDAS", "hedz", "Hedz", "HEDZ",  "heafs", "Heafs", 
+                      "HEAFS", "hesds", "Hesds", "HESDS",  "heqds", "Heqds", "HEQDS",  "headw", "Headw", "HEADW",  
+                      "hezds", "Hezds", "HEZDS",  "heaps", "Heaps", "HEAPS",  "hears", "Hears", "HEARS", "hands",
+                      "Hands", "HANDS", "Heags", "heags","H", "h"}
 
-  tails_variations = {"Tails", "tails", "TAILS", "TailS", "tAILS", "TAiLS", "tail", "Tail", "TAIL", "tAil", "TaIl",  "tals", "Tals", "TALS", "tils", "Tils", "TILS", "tais", "Tais", "TAIS", "taisl", "Taisl", "TAISL", "tial", "Tial", "TIAL", "tal", "Tal", "TAL",  "tiils", "Tiils", "TIILS", "tials", "Tials", "TIALS", "tailsl", "Tailsl", "TAILSL", "tailsz", "Tailsz", "TAILSZ", "tailz", "Tailz", "TAILZ", "taill", "Taill", "TAILL", "tailsw", "Tailsw", "TAILSW", "tailsx", "Tailsx", "TAILSX", "tailsd", "Tailsd", "TAILSD","t", "T"}
+  tails_variations = {"Tails", "tails", "TAILS", "TailS", "tAILS", "TAiLS", "tail", "Tail", "TAIL", "tAil", "TaIl", 
+                      "tals", "Tals", "TALS", "tils", "Tils", "TILS", "tais", "Tais", "TAIS", "taisl", "Taisl",
+                      "TAISL", "tial", "Tial", "TIAL", "tal", "Tal", "TAL",  "tiils", "Tiils", "TIILS", "tials", 
+                      "Tials", "TIALS", "tailsl", "Tailsl", "TAILSL", "tailsz", "Tailsz", "TAILSZ", "tailz", "Tailz",
+                      "TAILZ", "taill", "Taill", "TAILL", "tailsw", "Tailsw", "TAILSW", "tailsx", "Tailsx", "TAILSX",
+                      "tailsd", "Tailsd", "TAILSD","t", "T"}
 
   closest_match = difflib.get_close_matches(user_input, heads_variations | tails_variations, n=1, cutoff=0.75)
   if closest_match:
