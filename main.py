@@ -86,8 +86,7 @@ def play_game():
         else:
             print("\nRestarting The Game Now...\n")
             time.sleep(3)
-
-
+            
 
 if __name__ == "__main__":
     play_game()
