@@ -2,8 +2,9 @@ import random
 import difflib
 import time
 
-yes_variations = {"Yes", "yes", "y", "Y", "yeah", "Yeah", "ye", "Ye"}
 
+yes_variations = {"Yes", "yes", "y", "Y", "yeah", "Yeah", "ye", "Ye"}
+MATCH_CUTOFF = 0.75
 
 def coin_toss():
     return random.choice(['Heads', 'Tails'])
@@ -25,8 +26,9 @@ def normalize_input(user_input):
                         "Tials", "TIALS", "tailsl", "Tailsl", "TAILSL", "tailsz", "Tailsz", "TAILSZ", "tailz", "Tailz",
                         "TAILZ", "taill", "Taill", "TAILL", "tailsw", "Tailsw", "TAILSW", "tailsx", "Tailsx", "TAILSX",
                         "tailsd", "Tailsd", "TAILSD", "t", "T"}
-
-    closest_match = difflib.get_close_matches(user_input, heads_variations | tails_variations, n=1, cutoff=0.75)
+    
+    both_variations = heads_variations | tails_variations
+    closest_match = difflib.get_close_matches(user_input, both_variations, n=1, cutoff=MATCH_CUTOFF)
     if closest_match:
         return "Heads" if closest_match[0] in heads_variations else "Tails"
     return None
