@@ -70,7 +70,14 @@ def play_game():
         
         player_score = 0
         computer_score = 0
-        rounds = int(input("How may round do you want to play? "))
+        
+        while True:
+            rounds = int(input("How may rounds do you want to play? "))
+            if rounds <= 0:
+                print("\nPlease enter a number greater than 0.\n")
+                time.sleep(0.5)
+            else:
+                break
 
         print(f'There will be {rounds} rounds.')
         print('The person who gets the most points wins!')
