@@ -1,3 +1,10 @@
+"""This programme runs a heads and tails game against a computer for entertainment.
+It has code that will help normalize the input. This mean that if the user types
+the answer with a different spelling it will automatically correct itself and will
+return the correct answer. It will let the user choose how many rounds that they
+want to play. After playing there will be a replay option that will let the user
+play again."""
+
 import random
 import difflib
 import time
@@ -96,17 +103,20 @@ def play_game():
                 print('You win this round!\n')
                 player_score += 1
 
-                print(f'Player score is {player_score} \nComputer score is {computer_score}\n')
+                print(f'Player score is {player_score}
+                \nComputer score is {computer_score}\n')
                 
             else:
                 print('Sorry, you chose the wrong side.\n')
                 computer_score += 1
 
-                print(f'Player score is {player_score} \nComputer score is {computer_score}\n')
+                print(f'Player score is {player_score} 
+                \nComputer score is {computer_score}\n')
 
         if player_score > computer_score:
             print(
-                f'Well Done! You won the game!\nThe computer won {computer_score} rounds and you won {player_score} rounds.')
+                f'Well Done! You won the game!\nThe computer won {computer_score} 
+                rounds and you won {player_score} rounds.')
 
         elif player_score == computer_score:
             print("\nIt's a Tie!!!\n")
@@ -134,6 +144,7 @@ def replay_game():
         elif get_replay_choice in no_variations:
             print("\nThanks for playing!!!\n")
             return False
+            
         else:
             print("\nSorry I can't read that")
 
