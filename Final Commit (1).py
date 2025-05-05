@@ -34,7 +34,7 @@ def normalize_input(user_input):
     return None
 
 
-def the_player_choice():
+def get_player_choice():
     while True:
         user_input = input('Please enter your choice (Heads or Tails): ')
         answer = normalize_input(user_input)
@@ -45,19 +45,19 @@ def the_player_choice():
 
 def play_game():
     while True:
+        print('Welcome To The Coin Toss Game!')
         player_score = 0
         computer_score = 0
-        is_rounds = 7
+        rounds = int(input("How may round do you want to play? "))
 
-        print('Welcome To The Coin Toss Game!')
-        print(f'There will be {is_rounds} rounds.')
+        print(f'There will be {rounds} rounds.')
         print('The person who gets the most points wins!')
         print('The game will start now!\n')
 
-        for round_num in range(1, is_rounds + 1):
+        for round_num in range(1, rounds + 1):
             print(f'\n\n\nRound {round_num}\n')
 
-            player_choice = the_player_choice()
+            player_choice = get_player_choice()
             coin_result = coin_toss()
 
             print(f'You chose: {player_choice}\n')
@@ -68,6 +68,7 @@ def play_game():
                 player_score += 1
 
                 print(f'Player score is {player_score} \nComputer score is {computer_score}\n')
+                
             else:
                 print('Sorry, you chose the wrong side.\n')
                 computer_score += 1
@@ -77,6 +78,7 @@ def play_game():
         if player_score > computer_score:
             print(
                 f'Well Done! You won the game!\nThe computer won {computer_score} rounds and you won {player_score} rounds.')
+
         else:
             print(
                 f'Sorry, you lost the game. \nThe computer won {computer_score} rounds and you won {player_score} rounds.')
