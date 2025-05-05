@@ -12,6 +12,9 @@ def coin_toss():
 
 
 def normalize_input(user_input):
+    '''Normalize_input is when if the user types the answer but is
+    spelt differently it will help correct the statement by replacing
+    their answer with the correct one'''
     user_input = user_input.lower().strip()
 
     heads_variations = {"Heads", "heads", "HEADS", "HeadS", "hEADS", "HEaDS", "head", "Head", "HEAD", "hEad", "HeAd",
@@ -36,6 +39,7 @@ def normalize_input(user_input):
 
 
 def get_player_choice():
+    '''Ask player for choice and gives error message if not Heads or Tails'''
     while True:
         user_input = input('Please enter your choice (Heads or Tails): ')
         answer = normalize_input(user_input)
@@ -45,6 +49,11 @@ def get_player_choice():
 
 
 def play_game():
+    '''This will Start the game for the user.Then it will ask
+    the user for the amount of rounds they want. After playing 
+    the programme will calculate the
+    amount of rounds that the computer of the player has won.
+    It will also tell the player what side the coin has landed'''
     while True:
         print('Welcome To The Coin Toss Game!')
         
