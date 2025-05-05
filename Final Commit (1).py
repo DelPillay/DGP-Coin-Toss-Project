@@ -79,6 +79,9 @@ def play_game():
             print(
                 f'Well Done! You won the game!\nThe computer won {computer_score} rounds and you won {player_score} rounds.')
 
+        elif player_score == computer_score:
+            print("\nIt's a Tie!!!\n")
+
         else:
             print(
                 f'Sorry, you lost the game. \nThe computer won {computer_score} rounds and you won {player_score} rounds.')
