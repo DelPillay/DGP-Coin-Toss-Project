@@ -102,6 +102,9 @@ def play_game():
 
  
 def replay_game():
+    '''This will ask the user if they want to play the game again.
+     If they want to play again it will restart the programme. 
+     If they choose to not play again it will thank them for playing.'''
     while True:
         get_replay_choice = (input("\nDo You Want To Play Again (yes/no)? \n"))
 
