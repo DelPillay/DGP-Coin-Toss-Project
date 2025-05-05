@@ -2,8 +2,9 @@ import random
 import difflib
 import time
 
-
 yes_variations = {"Yes", "yes", "y", "Y", "yeah", "Yeah", "ye", "Ye"}
+no_variations = {"No", "no", "n", "N", "Naw", "naw"}
+
 MATCH_CUTOFF = 0.75
 
 def coin_toss():
@@ -46,6 +47,7 @@ def get_player_choice():
 def play_game():
     while True:
         print('Welcome To The Coin Toss Game!')
+        
         player_score = 0
         computer_score = 0
         rounds = int(input("How may round do you want to play? "))
@@ -85,16 +87,25 @@ def play_game():
         else:
             print(
                 f'Sorry, you lost the game. \nThe computer won {computer_score} rounds and you won {player_score} rounds.')
-
-        replay_game = (input("\nDo You Want To Play Again (yes/no)? \n"))
-
-        if replay_game not in yes_variations:
-            print("\nThanks for playing my game!")
+     
+        if not replay_game():
             break
 
-        else:
+ 
+def replay_game():
+    while True:
+        get_replay_choice = (input("\nDo You Want To Play Again (yes/no)? \n"))
+
+        if get_replay_choice in yes_variations:
             print("\nRestarting The Game Now...\n")
             time.sleep(3)
+            return True
+
+        elif get_replay_choice in no_variations:
+            print("\nThanks for playing!!!\n")
+            return False
+        else:
+            print("\nSorry I can't read that")
 
 
 if __name__ == "__main__":
