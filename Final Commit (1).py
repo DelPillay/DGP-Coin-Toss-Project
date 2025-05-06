@@ -9,9 +9,6 @@ import random
 import difflib
 import time
 
-yes_variations = {"Yes", "yes", "y", "Y", "yeah", "Yeah", "ye", "Ye"}
-no_variations = {"No", "no", "n", "N", "Naw", "naw"}
-
 MATCH_CUTOFF = 0.75
 
 def coin_toss():
@@ -133,6 +130,10 @@ def replay_game():
     '''This will ask the user if they want to play the game again.
      If they want to play again it will restart the programme. 
      If they choose to not play again it will thank them for playing.'''
+
+    yes_variations = {"Yes", "yes", "y", "Y", "yeah", "Yeah", "ye", "Ye"}
+    no_variations = {"No", "no", "n", "N", "Naw", "naw"}
+
     while True:
         get_replay_choice = (input("\nDo You Want To Play Again (yes/no)? \n"))
 
