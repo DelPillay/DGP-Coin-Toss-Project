@@ -120,7 +120,8 @@ def play_game():
 
         else:
             print(
-                f'Sorry, you lost the game. \nThe computer won {computer_score} rounds and you won {player_score} rounds.')
+                f'Sorry, you lost the game. \nThe computer won {computer_score}
+                rounds and you won {player_score} rounds.')
      
         if not replay_game():
             break
